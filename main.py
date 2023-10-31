@@ -16,9 +16,9 @@ from time import time
 with open('config.json', 'r') as f: DATA = load(f)
 def getenv(var): return environ.get(var) or DATA.get(var, None)
 
-bot_token = getenv("TOKEN")
-api_hash = getenv("HASH") 
-api_id = getenv("ID")
+bot_token = environ.get("TOKEN", "6691213151:AAE38Dqsld7gRXB_LthvpMMMskfuLZgVfV4")
+api_hash = environ.get("HASH", "af7b9b8a0d377b4d3735199e9df008af") 
+api_id = environ.get("ID", "25947375")
 app = Client("my_bot",api_id=api_id, api_hash=api_hash,bot_token=bot_token)  
 
 
